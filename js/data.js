@@ -32,37 +32,39 @@ const COURSE_PERIODS = [
 const PERIOD_BREAKS_AFTER = [4, 9];
 
 const FULL_WEEKS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+// 单周（奇数周）
+const ODD_WEEKS = [1, 3, 5, 7, 9, 11, 13, 15];
 
 const COURSES = [
   // ===== 周一 =====
   { id: 1,  name: "互联网软件开发技术与实践", teacher: "王立群", room: "理科教学楼 302",
     day: 1, startPeriod: 1, length: 2, weeks: FULL_WEEKS, type: "专业必修", color: "c1",
-    note: "本周实验：完成课程表小项目并提交 Git 仓库。" },
+    note: "" },
   { id: 2,  name: "数据结构与算法分析", teacher: "李明轩", room: "第一教学楼 201",
     day: 1, startPeriod: 3, length: 2, weeks: FULL_WEEKS, type: "专业必修", color: "c2",
     note: "课后习题每周一练，共 12 次。" },
   { id: 3,  name: "软件工程导论", teacher: "郑海涛", room: "理科教学楼 205",
-    day: 1, startPeriod: 5, length: 2, weeks: [9, 10, 11, 12, 13, 14, 15, 16], type: "专业选修", color: "c4",
-    note: "后八周课程，分组完成一个软件项目。" },
+    day: 1, startPeriod: 5, length: 3, weeks: [8, 9, 10, 11, 12, 13, 14, 15, 16], type: "专业必修", color: "c4",
+    note: "第 8 周起上课，分组完成一个软件项目。" },
 
   // ===== 周二 =====
   { id: 4,  name: "大学英语（四）", teacher: "Sarah Johnson", room: "外语楼 208",
-    day: 2, startPeriod: 1, length: 2, weeks: FULL_WEEKS, type: "通识必修", color: "c5",
+    day: 2, startPeriod: 1, length: 2, weeks: FULL_WEEKS, type: "公共必修", color: "c5",
     note: "每周课前需提交听写打卡。" },
   { id: 5,  name: "线性代数（B）", teacher: "陈晓芳", room: "第二教学楼 105",
-    day: 2, startPeriod: 3, length: 2, weeks: FULL_WEEKS, type: "通识必修", color: "c3",
+    day: 2, startPeriod: 5, length: 3, weeks: FULL_WEEKS, type: "公共必修", color: "c3",
     note: "期中考试占 30%。" },
   { id: 6,  name: "西方美术史", teacher: "孙艺宁", room: "理科教学楼 107",
-    day: 2, startPeriod: 10, length: 2, weeks: FULL_WEEKS, type: "通选课", color: "c4",
-    note: "晚间通选课，期末提交一篇艺术评论。" },
+    day: 2, startPeriod: 10, length: 3, weeks: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], type: "通识选修课", color: "c4",
+    note: "晚间通选课，前 11 周，期末提交一篇艺术评论。" },
 
   // ===== 周三 =====
   { id: 7,  name: "体育（网球）", teacher: "刘建国", room: "五四体育场",
-    day: 3, startPeriod: 1, length: 2, weeks: [2, 4, 6, 8, 10, 12, 14, 16], type: "通识必修", color: "c5",
-    note: "单周上课，记得带球拍。" },
+    day: 3, startPeriod: 1, length: 2, weeks: ODD_WEEKS, type: "公共必修", color: "c5",
+    note: "单周（奇数周）上课，记得带球拍。" },
   { id: 8,  name: "数据库系统概论", teacher: "赵德恒", room: "理科教学楼 415",
-    day: 3, startPeriod: 5, length: 2, weeks: [1, 2, 3, 4, 5, 6, 7, 8], type: "专业选修", color: "c6",
-    note: "前八周课程，含四次上机实验。" },
+    day: 3, startPeriod: 5, length: 2, weeks: FULL_WEEKS, type: "专业必修", color: "c6",
+    note: "全学期共 4 次上机实验。" },
   { id: 9,  name: "计算机网络原理", teacher: "周天成", room: "理科教学楼 301",
     day: 3, startPeriod: 7, length: 2, weeks: FULL_WEEKS, type: "专业必修", color: "c1",
     note: "配套实验：Socket 编程。" },

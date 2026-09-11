@@ -15,7 +15,6 @@
         <span class="brand-logo">课</span>
         <div class="brand-text">
           <h1>燕园课程表</h1>
-          <p>互联网软件开发技术与实践 · 课后小项目</p>
         </div>
       </div>
       <div class="search-box">
@@ -33,6 +32,11 @@
     <section class="toolbar">
       <div class="toolbar-left">
         <button id="todayBtn" class="btn btn-primary">回到今天</button>
+        <div class="week-nav">
+          <button id="prevWeekBtn" class="week-btn" title="上一周">‹</button>
+          <span id="weekLabel" class="week-label">第 1 周</span>
+          <button id="nextWeekBtn" class="week-btn" title="下一周">›</button>
+        </div>
         <div class="day-tabs" id="dayTabs"></div>
       </div>
       <div class="toolbar-right">
@@ -45,7 +49,7 @@
       <div class="schedule-grid" id="scheduleGrid"></div>
     </section>
 
-    <!-- 今日课程列表（移动端友好） -->
+    <!-- 当日课程列表（移动端友好） -->
     <section class="day-list-card" aria-label="选中日期课程列表">
       <h2 id="dayListTitle">今日课程</h2>
       <ul class="day-list" id="dayList"></ul>

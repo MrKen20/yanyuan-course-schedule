@@ -35,6 +35,9 @@ const FULL_WEEKS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 // 单周（奇数周）
 const ODD_WEEKS = [1, 3, 5, 7, 9, 11, 13, 15];
 
+// 学期信息
+const SEMESTER = "2026~2027 学年度第一学期";
+
 const COURSES = [
   // ===== 周一 =====
   { id: 1,  name: "互联网软件开发技术与实践", teacher: "王立群", room: "理科教学楼 302",
@@ -44,11 +47,11 @@ const COURSES = [
     day: 1, startPeriod: 3, length: 2, weeks: FULL_WEEKS, type: "专业必修", color: "c2",
     note: "课后习题每周一练，共 12 次。" },
   { id: 3,  name: "软件工程导论", teacher: "郑海涛", room: "理科教学楼 205",
-    day: 1, startPeriod: 5, length: 3, weeks: [8, 9, 10, 11, 12, 13, 14, 15, 16], type: "专业必修", color: "c4",
-    note: "第 8 周起上课，分组完成一个软件项目。" },
+    day: 1, startPeriod: 5, length: 3, weeks: [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], type: "专业必修", color: "c4",
+    note: "第 6 周起上课，分组完成一个软件项目。" },
 
   // ===== 周二 =====
-  { id: 4,  name: "大学英语（四）", teacher: "Sarah Johnson", room: "外语楼 208",
+  { id: 4,  name: "大学英语（三）", teacher: "Sarah Johnson", room: "外语楼 208",
     day: 2, startPeriod: 1, length: 2, weeks: FULL_WEEKS, type: "公共必修", color: "c5",
     note: "每周课前需提交听写打卡。" },
   { id: 5,  name: "线性代数（B）", teacher: "陈晓芳", room: "第二教学楼 105",

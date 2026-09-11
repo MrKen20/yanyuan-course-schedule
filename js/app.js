@@ -231,7 +231,7 @@
     const d = new Date();
     const weekOfDay = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"][d.getDay()];
     $("#todayInfo").innerHTML =
-      `今天是 <strong>${d.getFullYear()} 年 ${d.getMonth() + 1} 月 ${d.getDate()} 日 ${weekOfDay}</strong> · 第 ${realWeek} 教学周`;
+      `${SEMESTER}<br>今天是 <strong>${d.getFullYear()} 年 ${d.getMonth() + 1} 月 ${d.getDate()} 日 ${weekOfDay}</strong> · 第 ${realWeek} 教学周`;
 
     renderDayTabs();
     renderGrid();

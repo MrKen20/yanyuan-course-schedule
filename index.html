@@ -1,72 +1,72 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="zh-CN" data-page-node-id="P8RkEW1EcSMzcQY0alWnBR">
+<head data-page-node-id="HLq8FpkMumuzceOk5XCCun">
+  <meta charset="UTF-8" data-page-node-id="5g3itFc6gGHmgIBAAWViRr" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="HCZkoSrTDGR9niKAB97sby" />
   <title>燕园课程表 · 课程表查询</title>
-  <meta name="description" content="一个基于原生 HTML/CSS/JavaScript 的课程表查询小工具，北大红 UI 风格。" />
-  <link rel="stylesheet" href="css/style.css" />
+  <meta name="description" content="一个基于原生 HTML/CSS/JavaScript 的课程表查询小工具，北大红 UI 风格。" data-page-node-id="9n5loXqKvRCBXW5yEKOrsS" />
+  <link rel="stylesheet" href="css/style.css" data-page-node-id="2WV7VcdCAG8morMQ9SyGK3" />
 </head>
-<body>
+<body data-page-node-id="sUKCt71rC7ig9ypRDVZSaF">
   <!-- 顶部导航 -->
-  <header class="topbar">
-    <div class="topbar-inner">
-      <div class="brand">
-        <span class="brand-logo">课</span>
-        <div class="brand-text">
-          <h1>燕园课程表</h1>
+  <header class="topbar" data-page-node-id="WuuY1k1bETKjw0LnMFVVb4">
+    <div class="topbar-inner" data-page-node-id="B3NiltsDuY7N2RCiPMaqmw">
+      <div class="brand" data-page-node-id="69TpnM8VdTCf6DjAEJxzp4">
+        <span class="brand-logo" data-page-node-id="1a7EuxCGo32VDya1kFzj7P">课</span>
+        <div class="brand-text" data-page-node-id="8bSMJ0EG9nh8YfI0m1IOEY">
+          <h1 data-page-node-id="1PQqwkPwo7lvsKQzhsTGSw">燕园课程表</h1>
         </div>
       </div>
-      <div class="search-box">
-        <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="11" cy="11" r="7" />
-          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+      <div class="search-box" data-page-node-id="Im4CYvI3JNHtGQwAXb7nDe">
+        <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" data-page-node-id="4oCOFfvWE23Vs4oWuxD7pg">
+          <circle cx="11" cy="11" r="7" data-page-node-id="gNse8zLotaDFUkVUPR04CA" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" data-page-node-id="mj8DKUdqC1lAFFxZwCboqO" />
         </svg>
-        <input id="searchInput" type="text" placeholder="搜索课程名 / 教师 / 教室…" autocomplete="off" />
+        <input id="searchInput" type="text" placeholder="搜索课程名 / 教师 / 教室…" autocomplete="off" data-page-node-id="AOEHCDHzGubEcsV9huREWa" />
       </div>
     </div>
   </header>
 
   <!-- 功能区 -->
-  <main class="container">
-    <section class="toolbar">
-      <div class="toolbar-left">
-        <button id="todayBtn" class="btn btn-primary">回到今天</button>
-        <div class="week-nav">
-          <button id="prevWeekBtn" class="week-btn" title="上一周">‹</button>
-          <span id="weekLabel" class="week-label">第 1 周</span>
-          <button id="nextWeekBtn" class="week-btn" title="下一周">›</button>
+  <main class="container" data-page-node-id="253359HUPWWDB1OG9eCddh">
+    <section class="toolbar" data-page-node-id="vnwtkG5Q107QO5radcvecL">
+      <div class="toolbar-left" data-page-node-id="2iQKDxwCa45GD31nhm9Bcm">
+        <button id="todayBtn" class="btn btn-primary" data-page-node-id="6AQEkdZUbx9DAvnv9CcJAS">回到今天</button>
+        <div class="week-nav" data-page-node-id="mDwdUW40AS46k3YN6pZqKv">
+          <button id="prevWeekBtn" class="week-btn" title="上一周" data-page-node-id="0dP6jkFowEkXY29GARtb4D">‹</button>
+          <span id="weekLabel" class="week-label" data-page-node-id="4d4CXod93mQQXMQQJdBpkE">第 1 周</span>
+          <button id="nextWeekBtn" class="week-btn" title="下一周" data-page-node-id="d7tErvxCB1a6iFeVLCki5r">›</button>
         </div>
-        <div class="day-tabs" id="dayTabs"></div>
+        <div class="day-tabs" id="dayTabs" data-page-node-id="7NeaMkqmJM1Vnxl693sz3h"></div>
       </div>
-      <div class="toolbar-right">
-        <span class="today-info" id="todayInfo"></span>
+      <div class="toolbar-right" data-page-node-id="vSNAh0h52GIUonJl9k5hZb">
+        <span class="today-info" id="todayInfo" data-page-node-id="klxB9vl0PNVCJtmxxxcsWL"></span>
       </div>
     </section>
 
     <!-- 课程表主体 -->
-    <section class="schedule-card" aria-label="课程表">
-      <div class="schedule-grid" id="scheduleGrid"></div>
+    <section class="schedule-card" aria-label="课程表" data-page-node-id="E1ZrNnbXwLxqa8kAWTtef7">
+      <div class="schedule-grid" id="scheduleGrid" data-page-node-id="pGPkm65Qf8Dt7hG19A67pK"></div>
     </section>
 
     <!-- 当日课程列表（移动端友好） -->
-    <section class="day-list-card" aria-label="选中日期课程列表">
-      <h2 id="dayListTitle">今日课程</h2>
-      <ul class="day-list" id="dayList"></ul>
-      <p class="empty-tip" id="emptyTip" hidden>这一天没有课程，好好休息 🌿</p>
+    <section class="day-list-card" aria-label="选中日期课程列表" data-page-node-id="Ck1sh1xfZbd9GKUeKB2HDG">
+      <h2 id="dayListTitle" data-page-node-id="zknYzY1gosttRWLFK2VSSz">今日课程</h2>
+      <ul class="day-list" id="dayList" data-page-node-id="AXz7Q9RKh3CaHl4qMhXhvz"></ul>
+      <p class="empty-tip" id="emptyTip" hidden data-page-node-id="BnFfDszX3TSYuDsrPcQ6hp">这一天没有课程，好好休息 🌿</p>
     </section>
 
-    <footer class="page-footer">
-      <p>本课程表数据为演示数据 · 《互联网软件开发技术与实践》课程作业 · <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></p>
+    <footer class="page-footer" data-page-node-id="6ARJpBxGAY0AtVRl6cNc4u">
+      <p data-page-node-id="s7H8TdKg0KzHQd3K07ftP0">2026~2027 学年度第一学期 · 本课程表数据为演示数据 · 《互联网软件开发技术与实践》课程作业 · <a href="https://github.com/" target="_blank" rel="noopener" data-page-node-id="hCH5SIExHM3WDCt8f1uml9">GitHub</a></p>
     </footer>
   </main>
 
   <!-- 课程详情弹窗 -->
-  <div class="modal-mask" id="modalMask" hidden>
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <button class="modal-close" id="modalClose" aria-label="关闭">×</button>
-      <h3 id="modalTitle"></h3>
-      <div class="modal-body" id="modalBody"></div>
+  <div class="modal-mask" id="modalMask" hidden data-page-node-id="GNZeEujxZpjprNYEAK8CVy">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" data-page-node-id="e5BWBs97DoHbgC7JjFxI5u">
+      <button class="modal-close" id="modalClose" aria-label="关闭" data-page-node-id="fhmYv8pFBOFbzPRDJxTP2n">×</button>
+      <h3 id="modalTitle" data-page-node-id="yw9C9mYyl35hP6VcNH7QkK"></h3>
+      <div class="modal-body" id="modalBody" data-page-node-id="drSCDE1FCVAqYjoQ9m1igw"></div>
     </div>
   </div>
 

@@ -1,0 +1,381 @@
+/* ==========================================================
+   燕园课程表 · 样式表
+   主色：北大红 #94070A
+   ========================================================== */
+
+:root {
+  --pku-red: #94070A;
+  --pku-red-dark: #6E0507;
+  --pku-red-light: #FBEDED;
+  --pku-red-border: #E5C8C8;
+  --ink: #2B2B2B;
+  --ink-light: #6F6F6F;
+  --bg: #F7F5F3;
+  --card: #FFFFFF;
+  --line: #E8E4E0;
+  --radius: 12px;
+  --shadow: 0 2px 12px rgba(148, 7, 10, 0.06);
+  --shadow-lg: 0 8px 28px rgba(148, 7, 10, 0.14);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ---------- 顶部导航 ---------- */
+.topbar {
+  background: linear-gradient(135deg, var(--pku-red) 0%, var(--pku-red-dark) 100%);
+  color: #fff;
+  padding: 18px 24px;
+  box-shadow: var(--shadow-lg);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.topbar-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.brand { display: flex; align-items: center; gap: 14px; }
+
+.brand-logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.brand-text h1 { font-size: 20px; font-weight: 700; letter-spacing: 1px; }
+.brand-text p { font-size: 12px; opacity: 0.85; }
+
+/* 搜索框 */
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 999px;
+  padding: 8px 16px;
+  min-width: 260px;
+  transition: box-shadow 0.2s;
+}
+
+.search-box:focus-within { box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.35); }
+
+.search-box .icon { color: var(--pku-red); flex-shrink: 0; }
+
+.search-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  width: 100%;
+  color: var(--ink);
+}
+
+/* ---------- 主体容器 ---------- */
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 24px 20px 40px;
+}
+
+/* ---------- 工具栏 ---------- */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.toolbar-left { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+
+.btn {
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 14px;
+  padding: 8px 18px;
+  transition: all 0.18s;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background: var(--pku-red);
+  color: #fff;
+}
+
+.btn-primary:hover { background: var(--pku-red-dark); transform: translateY(-1px); }
+
+/* 星期切换 */
+.day-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+
+.day-tab {
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--ink-light);
+  padding: 7px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.18s;
+  font-family: inherit;
+}
+
+.day-tab:hover { border-color: var(--pku-red); color: var(--pku-red); }
+
+.day-tab.active {
+  background: var(--pku-red);
+  color: #fff;
+  border-color: var(--pku-red);
+}
+
+.today-info { font-size: 13px; color: var(--ink-light); }
+.today-info strong { color: var(--pku-red); }
+
+/* ---------- 课程表网格 ---------- */
+.schedule-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+  overflow-x: auto;
+  margin-bottom: 26px;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: 72px repeat(7, minmax(120px, 1fr));
+  min-width: 860px;
+}
+
+.grid-head {
+  background: var(--pku-red-light);
+  color: var(--pku-red);
+  font-weight: 600;
+  text-align: center;
+  padding: 12px 6px;
+  font-size: 14px;
+  border-bottom: 2px solid var(--pku-red-border);
+  position: sticky;
+  top: 0;
+}
+
+.grid-head.corner { font-size: 12px; color: var(--ink-light); background: var(--bg); border-bottom: 2px solid var(--line); }
+
+.grid-head.today-head {
+  background: var(--pku-red);
+  color: #fff;
+}
+
+.grid-head.today-head::after {
+  content: "今天";
+  display: block;
+  font-size: 11px;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+/* 时间列 */
+.time-col {
+  padding: 10px 6px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  background: #FBFAF9;
+}
+
+.time-col .period { font-size: 13px; font-weight: 600; color: var(--pku-red); }
+.time-col .time { font-size: 11px; color: var(--ink-light); }
+
+/* 课程单元格 */
+.cell {
+  border-bottom: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  padding: 6px;
+  min-height: 84px;
+  transition: background 0.15s;
+}
+
+.cell:last-child, .cell:nth-child(8n) { border-right: none; }
+
+.cell:hover { background: var(--pku-red-light); }
+
+.course-chip {
+  width: 100%;
+  height: 100%;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 8px 6px;
+  text-align: left;
+  font-family: inherit;
+  transition: transform 0.15s, box-shadow 0.15s;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* 课程颜色（北大红系深浅变化 + 搭配色） */
+.course-chip.c1 { background: var(--pku-red); color: #fff; }
+.course-chip.c2 { background: #B93A3D; color: #fff; }
+.course-chip.c3 { background: #7A2E30; color: #fff; }
+.course-chip.c4 { background: var(--pku-red-light); color: var(--pku-red-dark); border: 1px solid var(--pku-red-border); }
+.course-chip.c5 { background: #FDF6EC; color: #8A5A1E; border: 1px solid #EBD9B4; }
+.course-chip.c6 { background: #EDF3F6; color: #2F5D74; border: 1px solid #C8DEE9; }
+
+.course-chip:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.course-chip .name { font-size: 13px; font-weight: 600; line-height: 1.35; }
+.course-chip .room { font-size: 11px; opacity: 0.9; }
+
+.course-chip.highlight { outline: 3px solid #FFB800; outline-offset: 1px; }
+
+/* ---------- 当日课程列表 ---------- */
+.day-list-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  padding: 20px 24px;
+}
+
+.day-list-card h2 {
+  font-size: 16px;
+  color: var(--pku-red);
+  margin-bottom: 14px;
+  padding-left: 10px;
+  border-left: 4px solid var(--pku-red);
+}
+
+.day-list { list-style: none; }
+
+.day-list li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 10px;
+  border-bottom: 1px dashed var(--line);
+  flex-wrap: wrap;
+}
+
+.day-list li:last-child { border-bottom: none; }
+
+.list-time {
+  font-size: 12px;
+  color: var(--pku-red);
+  font-weight: 600;
+  background: var(--pku-red-light);
+  border-radius: 6px;
+  padding: 4px 10px;
+  white-space: nowrap;
+}
+
+.list-name { font-size: 14px; font-weight: 600; flex: 1; min-width: 120px; }
+.list-meta { font-size: 12px; color: var(--ink-light); }
+
+.empty-tip { text-align: center; color: var(--ink-light); padding: 18px 0 8px; font-size: 14px; }
+
+/* ---------- 弹窗 ---------- */
+.modal-mask {
+  position: fixed;
+  inset: 0;
+  background: rgba(43, 43, 43, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: 20px;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 14px;
+  max-width: 460px;
+  width: 100%;
+  padding: 26px 28px;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  animation: pop 0.22s ease;
+  border-top: 4px solid var(--pku-red);
+}
+
+@keyframes pop {
+  from { transform: scale(0.92); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  border: none;
+  background: none;
+  font-size: 24px;
+  color: var(--ink-light);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal-close:hover { color: var(--pku-red); }
+
+.modal h3 { font-size: 18px; color: var(--pku-red); margin-bottom: 14px; padding-right: 24px; }
+
+.modal-body dl { display: grid; grid-template-columns: 76px 1fr; row-gap: 10px; font-size: 14px; }
+.modal-body dt { color: var(--ink-light); }
+.modal-body dd { color: var(--ink); }
+
+.tag {
+  display: inline-block;
+  font-size: 12px;
+  background: var(--pku-red-light);
+  color: var(--pku-red);
+  border-radius: 5px;
+  padding: 2px 8px;
+  margin-right: 6px;
+}
+
+/* ---------- 页脚 ---------- */
+.page-footer {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--ink-light);
+}
+
+.page-footer a { color: var(--pku-red); text-decoration: none; }
+.page-footer a:hover { text-decoration: underline; }
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 720px) {
+  .topbar-inner { justify-content: center; }
+  .toolbar { justify-content: center; }
+  .schedule-card { display: none; } /* 小屏隐藏网格，使用列表视图 */
+  .day-list-card { padding: 16px; }
+}
